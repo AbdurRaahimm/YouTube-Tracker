@@ -4,12 +4,24 @@ import { Input } from "@/components/ui/input"
 import SheetSidebar from '@/components/SheetSidebar'
 import { Footer } from './Footer'
 import { socialMedia } from '@/data/socialMedia'
+import { useToast } from "@/hooks/use-toast"
 
 export default function YoutubeSubsTracker() {
   const [hideHeader, setHideHeader] = useState<boolean>(false)
   const [hideSearch, setHideSearch] = useState<boolean>(false)
   const [showAdditionalStats, setShowAdditionalStats] = useState<boolean>(false)
+  const { toast } = useToast()
 
+  
+  const handleCopyText = () => {
+    navigator.clipboard.writeText('65 091 372')
+    toast({
+      title: 'Copied to clipboard',
+      variant: 'default',
+      description: '65 091 372',
+      duration: 3000,
+    })
+  }
 
   return (
     <div className="min-h-screen  text-white flex flex-col items-center justify-center p-4">
@@ -32,7 +44,7 @@ export default function YoutubeSubsTracker() {
       </div>
       <h2 className="text-xl mb-4">UR : Cristiano</h2>
 
-      <div className="bg-white text-pink-500 text-4xl sm:text-6xl font-bold py-4 px-8 rounded-full mb-6">
+      <div onClick={handleCopyText} className="bg-white text-pink-500 text-4xl sm:text-6xl font-bold py-4 px-8 rounded-full mb-6 cursor-pointer ">
         65 091 372
       </div>
       {!hideSearch && (
