@@ -3,6 +3,7 @@ import { Search, Eye, Video, TrendingUp, ArrowRight } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import SheetSidebar from '@/components/SheetSidebar'
+import { Footer } from './Footer'
 
 export default function YoutubeSubsTracker() {
   const [hideHeader, setHideHeader] = useState<boolean>(false)
@@ -22,7 +23,7 @@ export default function YoutubeSubsTracker() {
       />
       {!hideHeader && (
         <>
-          <h1 className="text-3xl font-bold mb-2">Realtime YouTube Tracker</h1>
+          <h1 className="text-center text-3xl font-bold mb-2">Realtime YouTube Tracker</h1>
           <p className="mb-4">for the channel</p>
         </>
       )}
@@ -31,7 +32,7 @@ export default function YoutubeSubsTracker() {
       </div>
       <h2 className="text-xl mb-4">UR : Cristiano</h2>
 
-      <div className="bg-white text-pink-500 text-6xl font-bold py-4 px-8 rounded-full mb-6">
+      <div className="bg-white text-pink-500 text-4xl sm:text-6xl font-bold py-4 px-8 rounded-full mb-6">
         65 091 372
       </div>
       {!hideSearch && (
@@ -77,7 +78,7 @@ export default function YoutubeSubsTracker() {
           </Button>
         ))}
       </div>
-
+      <Footer/>
     </div>
   )
 }

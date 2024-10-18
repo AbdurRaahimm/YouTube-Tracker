@@ -1,11 +1,12 @@
 import YoutubeSubsTracker from "@/components/YoutubeSubsTracker"
+import Layout from "@/components/Layout"
 
 
 function App() {
   return (
-    <>
-     <YoutubeSubsTracker />           
-    </>
+    <Layout>
+      <YoutubeSubsTracker />
+    </Layout>
   )
 }
 
