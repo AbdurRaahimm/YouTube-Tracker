@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Search, Eye, Video, TrendingUp, ArrowRight } from 'lucide-react'
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import SheetSidebar from '@/components/SheetSidebar'
 import { Footer } from './Footer'
+import { socialMedia } from '@/data/socialMedia'
 
 export default function YoutubeSubsTracker() {
   const [hideHeader, setHideHeader] = useState<boolean>(false)
@@ -72,13 +72,20 @@ export default function YoutubeSubsTracker() {
         )
       }
       <div className="flex flex-wrap justify-center gap-2 mb-6">
-        {['Telegram', 'TikTok', 'X (Twitter)', 'VK', 'Instagram'].map((service) => (
-          <Button key={service} variant="secondary" className="rounded-full text-pink-500">
-            {service}
-          </Button>
-        ))}
+        {
+          socialMedia.map((service: { name: string, url: string}) => (
+            <a
+              href={service.url}
+              key={service.name}
+              className="text-sm text-pink-500 border border-pink-500 rounded-full px-4 py-2 bg-white font-semibold"
+              target='_blank'>
+              {service.name} 
+              
+            </a>
+          ))
+        }
       </div>
-      <Footer/>
+      <Footer />
     </div>
   )
 }
