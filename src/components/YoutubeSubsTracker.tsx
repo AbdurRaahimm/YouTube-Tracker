@@ -11,7 +11,7 @@ export default function YoutubeSubsTracker() {
 
 
   return (
-    <div className="min-h-screen bg-pink-500 text-white flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen  text-white flex flex-col items-center justify-center p-4">
       <SheetSidebar
         hideHeader={hideHeader}
         setHideHeader={setHideHeader}
@@ -39,7 +39,7 @@ export default function YoutubeSubsTracker() {
           <Input
             type="text"
             placeholder="Enter channel name"
-            className="pl-3 pr-4 py-2 rounded-lg bg-pink-400 text-white placeholder:text-pink-200 w-64 focus:outline-none"
+            className="pl-3 pr-4 py-2 rounded-lg bg-transparent text-white placeholder:text-pink-200 w-64 focus:outline-none"
           />
           <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-pink-200 cursor-pointer" />
         </div>
